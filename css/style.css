@@ -1,0 +1,58 @@
+body{
+    width: 100%;
+    height: 100vh;
+}
+.wrap {
+    background: white;
+    height: 100%;
+    width: 100%;
+    position: relative;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+#icon{
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    border-radius: 15px;
+}
+
+main {
+    position: absolute;
+    top: 35%;
+    left: 20px;
+    right: 20px;
+    margin: auto;
+    resize: vertical;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.3);
+    color: white;
+}
+.loader{
+    color: white;
+}
+.cover{
+    margin: 15px;
+}
+#userLocation{
+    color: white;
+    margin: 30px auto 20px;
+    text-align: center;
+    text-shadow: 2px 2px 5px #000000;
+}
+.icon-temp{
+    margin-bottom: 60px;
+}
+button{
+    background-color: transparent;
+    border-radius: 15px;
+}
+.extraInfo{
+    list-style: none;
+    text-align: left;
+}
+.extraInfo{
+    font-size: 1.5em;
+}
+
