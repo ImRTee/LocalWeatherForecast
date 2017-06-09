@@ -34,7 +34,7 @@
         background-color: transparent;
     }
     #userLocation{
-        margin-top: 280px;
+        margin-top: 80px;
         font-size: 5em;
     }
     .moreInfoSection{
@@ -45,24 +45,24 @@
 
 @media screen and (max-width: 768px) {
     main{
-        top: 30%;
+        top: 20%;
         width: 60%;
     }
     .icon-temp{
         width: 100%;
-        font-size: 5em;
-        height: 4em;
+        font-size: 4em;
+        height: 3em;
     }
     #temp{
         background-color: transparent;
     }
     #userLocation{
-        margin-top: 185px;
-        font-size: 6em;
+        margin-top: 30px;
+        font-size: 4.3em;
     }
     .moreInfoSection{
         padding-left:0;
-        font-size: 2em;
+        font-size: 1em;
     }
 }
 
