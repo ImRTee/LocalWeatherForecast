@@ -4,6 +4,7 @@
 $(document).ready(function(){
     let APIkey = "e348e4664e8460c02be4aa66a09f704e";
     let lat,lng;
+    let clickMe;
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(function(position) {
            lat = position.coords.latitude;
@@ -14,7 +15,10 @@ $(document).ready(function(){
                 success: function(response){
                     displayWeather(response)
                 },
-                type: 'GET'
+                type: 'GET',
+                error: function(error){
+                    alert('Sorry, there is a problem with getting the weather at your location!')
+                }
             });
             $.ajax({
                 url: `https://search.mapzen.com/v1/reverse?point.lat=${lat}&point.lon=${lng}&api_key=mapzen-DKiexRM`,
@@ -24,13 +28,26 @@ $(document).ready(function(){
                     let country = response.features[0].properties.country;
                     $("#userLocation").text(`${suburn},${country}`);
                 },
-                type: 'GET'
-
-        })
+                type: 'GET',
+                error: function(error){
+                    alert('Error: ',error)
+                }
         });
+        });
+        //Animate the button;
+        clickMe = setInterval(function(){
+            $('button.animated').addClass("bounce");
+            $('button.animated').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
+                $('button.animated').removeClass("bounce")
+            });
+
+        },3000)
+    } else{
+        alert("Sorry your browser doesn't allow the app to know your location");
     };
 
     $('button').click(function(){
+        clearInterval(clickMe);
        if ($("#units").html() == `${unescape('%B0')}F`){
            $('#units').text(`${unescape('%B0')}C`);
            let tempInF = Number($('#temp').text());
